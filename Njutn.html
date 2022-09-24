@@ -14,34 +14,70 @@
                 <a href="#main-nav" class="h5 open-menu"><i style="color:#fff; position: relative; bottom:120px; cursor:pointer;" class="fa fa-bars fa-2x fa-fw"></i></a>
                 <a href="#" class="h5 close-menu"><i style="color:#fff; position: relative; bottom:120px; cursor:pointer;" class="fa fa-times fa-2x fa-fw"></i></a>
                 <div class="spacer"></div>
-                <h1 style="font-weight: 500;">NJUTN</h1>
+                <h1 style="font-weight: 500;">Njutnov metod</h1>
                 <div class="spacer"></div>
                 <hr><hr>
-                <h2 class="text-center">Jelena Kitanović</h2>
+                <h2 class="text-center" style="text-transform: none">Rešavanje nelinearnih jednačina</h2>
               </div>
-            </div>
-        
-            <div class="section"><h1>Najnovije</h1><hr></div>
-        
+            </div>        
             <div class="container">
               <div class="row">
-                <div class="col-md-4">
-                  <div class="well">
-                    <img src="http://timothy.expert/codepen-resources/person_laptop.jpg" style="height:100%; width:100%">
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="well">
-                    <h3>Njutnov metod</h3>
-                    <p>Njutnov metod je jedan od nazastupljenijih metoda koji se koristi prilikom iterativnog rešavanja nelinaernih jednačina. Glavna ideja koja stoji iza ovog metoda je da nelinearan problem svedemo na linearan.</p>
-                    <p><a href="https://jelenakitanovic.github.io/njutn" class="btn btn-default">Pročitaj više</a></p>
-                  </div>
+                <div class="col-md
+		<h1 style="font-weight: 500;">Iterativni metodi rešavanja nelinearnih jednačina</h1>
+
+		<p>Rešavanje nelinearnih jednačina je oblast koja ima široku primenu, te nas i ne čudi što je cela jedna oblast numeričke matematike posvećena rešavanju baš ovog problema. 
+		Za veliki broj nelinearnih jednačina nemoguće je odrediti tačno rešenje, pa se ovakve jednačine rešavaju samo približno, primenom nekog numeričkog iterativnog postupka. </p>
+
+		<p> U ovom predavanju ćemo se baviti rešavanjem problema nelinearnih jednačina oblika:
+			<img src=”s1.PNG”>
+		<h2>Njutnov metod  </h2>
+		<p>Njutnova metoda je jedna od najzastupljenijih metoda za nalaženje izolovanih korena nelinearnih jednačina. 
+		Generalna ideja koja stoji iza Njutnove metode je da umesto traženja tačnog rešenja, iteracijama linearnih aproksimacija prilazimo 
+		sve bliže traženom korenu, sve dok ne priđemo dovoljno blizu, tj. dok je razlika između dve iteracije dovoljno značajna. </p>
+
+		<p> <b>Primer 1 </b> <br>
+			Pođimo od jednog primera, recimo da želimo da rešimo jednačinu: </p>
+			<img src=”s2.PNG”>
+
+		<p>Znamo već da su njeni koreni  &plusmn &#8730;x + 6  pa ćemo pokušati da se kroz nekoliko iteracija što više 
+		približimo pozitivnom korenu, prateći princip rešavanja Njutnovom metodom. 
+		<br> Krenimo od proizvoljne tačke koja je dovoljno blizu korenu funkcije, radi lakše ilustracije neka to bude tačka x&#8320;=7.22 kao na
+		Figure 1.</p>
+		<img src=”fig1.PNG”>
+		<p>Nacrtajmo sada tangentu na f, u tački (x&#8320;, f(x&#8320;)) i tačku preseka x-ose i tangente obeležimo sa x&#8321;. 
+		Na Figure 1 možemo primetiti kako se polako približavamo nuli funkcije. 
+		<br> Ponovimo sada isti postupak za tačku x&#8321; i dobićemo tačku x&#8322; kao na Figure 2.
+ 			</p>
+		<img src=”fig2.PNG”>
+		<p>Sada vidimo kako smo se približili traženoj tački i mogli bismo već da se zaustavimo i uzmemo x&#8322;  kao približno rešenje jednačine, 
+		ali pošto hoćemo da budemo što precizniji, hajde da odradimo i treću iteraciju (Figure 3). </p>
+		<img src=”fig3.PNG”>
+
+		<p>Sada već možemo primetiti kako smo jako blizu tačnog rešenja, te je greška golim okom gotovo nevidljiva. 
+		Ovde možemo stati i uzeti vrednost x&#8323; kao rešenje, ili, u zavisnosti od potrebne tačnosti, možemo nastaviti dalje sa iteracijama i 
+		približavati se korenu sve više. Recimo da nam je trenutna tačnost dovoljna i uzećemo dobijeno rešenje.
+		Ovim metodom smo, na prilično jednostavan način, došli do dovoljne tačnosti u nekoliko koraka, a nismo morali da rešavamo kvadratnu 
+		jednačinu. Bilo nam je dovoljno da znamo da izračunamo vrednost funkcije u datoj tački, kao i njen prvi izvod u toj tački.
+		 </p>
+		<h2> Formalni zapis Njutnovog metoda </h2>
+		<p> Hajde sada da probamo da generalizujemo i formalno zapišemo šta smo videli u Primeru 1.</p>
+		<p> Neka je na intervalu [α,β]  izolovan jedinstven prost koren x&equals;a jednačine (1) i neka je f &isin; C&sup1;
+		[α,β]  i  f'(x)≠0 za svako x na posmatranom intervalu. Izaberimo tačku x&#8320; &isin; (α,β). <br>
+		Tada, na osnovu Tejlorove formule imamo: </p> 
+		<img src=”s3.PNG”>
+		
+		<p> Imajući u vidu da je f(a)=0, zanemarivanjem poslednjeg člana na desnoj strani u jednakosti (2), dobijamo </p>
+		<img src=”s4.PNG”>
+		<p> Sa x&#8321; označimo desnu stranu u poslednjoj približnoj jednakosti, tj. </p>
+		<img src=”s5.PNG”>
+		<p>Geometrijski, x&#8321; predstavlja apscisu tačke preseka tangente na krivu y= f(x) u tački (x&#8320;,f(x&#8320;)), sa x-osom.
+		Jednakost (4) nam sugeriše konstrukciju iterativnog procesa koji nazivamo Njutnov metod ili metod tangente. </p>
+		<img src=”s6.PNG”>
                 </div>
               </div>
             </div>
-        
             <div class="work " style="height:600px !important;">
-            <div class="section" id="work" style="color:#fff"><h1 style="color:#f2f3f8; text-transform: none;;" >Video lekcije</h1><hr></div>
+            <div class="section" id="work" style="color:#fff"><h1 style="color:#f2f3f8; text-transform: none;" >Video</h1><hr></div>
             <div class="container">
               <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
